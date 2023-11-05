@@ -1,0 +1,12 @@
+<div class="max-w-md mx-auto flex flex-col gap-4">
+  <div *ngFor="let product of products" class="border rounded p-6">
+    <img class="h-64 mx-auto" [src]="product.image" [alt]="product.title" />
+    <h4 class="text-center mt-4 mb-2.5 text-gray-700">{{ product.title }}</h4>
+    <p class="text-xs text-gray-500">{{ product.description }}</p>
+    <div class="text-center mt-3">Price: {{ product.price | currency }}</div>
+  </div>
+</div>
+
+<div *ngIf="products.length" class="text-center mt-5">
+  <button class="view-more" (click)="getProducts()">view more</button>
+</div>
